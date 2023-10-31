@@ -49,15 +49,15 @@ public class BearerTokenUtils {
         //alg : 属性表示签名使用的算法，默认为 HMAC SHA256（写为HS256）
         //sign_type : 属性表示令牌的类型，JWT 令牌统一写为 SIGN
         HashMap<String, Object> header = new HashMap<>();
-        header.put("alg","HS256");
-        header.put("sign_type","SIGN");
+        header.put("alg", "HS256");
+        header.put("sign_type", "SIGN");
         HashMap<String, Object> payload = new HashMap<>();
         //api_key : 属性表示用户标识 id，即用户API Key的{id}部分
-        payload.put("api_key",apiKey);
+        payload.put("api_key", apiKey);
         //exp : 属性表示生成的JWT的过期时间，客户端控制，单位为毫秒
-        payload.put("exp",System.currentTimeMillis() + expireMillisecond);
+        payload.put("exp", System.currentTimeMillis() + expireMillisecond);
         //timestamp : 属性表示当前时间戳，单位为毫秒
-        payload.put("timestamp",Calendar.getInstance().getTimeInMillis());
+        payload.put("timestamp", Calendar.getInstance().getTimeInMillis());
         //生成token信息
         token = JWT.create().withHeader(header).withPayload(payload).sign(algorithm);
         //将token存入缓存
