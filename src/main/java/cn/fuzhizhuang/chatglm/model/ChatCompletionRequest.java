@@ -59,7 +59,7 @@ public class ChatCompletionRequest {
      * 由用户端传参，需保证唯一性；用于区分每次请求的唯一标识，用户端不传时平台会默认生成
      */
     @JsonProperty("request_id")
-    private String requestId = String.format("fuzhi-%d",System.currentTimeMillis());
+    private String requestId = String.format("fuzhi-%d", System.currentTimeMillis());
 
     /**
      * SSE接口调用时，用于控制每次返回内容方式是增量还是全量，不提供此参数时默认为增量返回
@@ -94,13 +94,13 @@ public class ChatCompletionRequest {
 
     @Override
     public String toString() {
-        Map<String,Object> paramsMap = new HashMap<>();
-        paramsMap.put("request_id",requestId);
-        paramsMap.put("prompt",prompt);
-        paramsMap.put("temperature",temperature);
-        paramsMap.put("top_p",topP);
-        paramsMap.put("incremental",incremental);
-        paramsMap.put("sseFormat",sseFormat);
+        Map<String, Object> paramsMap = new HashMap<>();
+        paramsMap.put("request_id", requestId);
+        paramsMap.put("prompt", prompt);
+        paramsMap.put("temperature", temperature);
+        paramsMap.put("top_p", topP);
+        paramsMap.put("incremental", incremental);
+        paramsMap.put("sseFormat", sseFormat);
         try {
             return new ObjectMapper().writeValueAsString(paramsMap);
         } catch (JsonProcessingException e) {
