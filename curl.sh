@@ -12,7 +12,7 @@ curl -X POST \
         "prompt": [
         {
         "role": "user",
-        "content": "讲一个笑话"
+        "content": "写一个Java冒泡排序"
         }
         ]
         }' \
