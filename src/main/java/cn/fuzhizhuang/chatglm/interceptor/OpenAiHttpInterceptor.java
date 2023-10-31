@@ -32,11 +32,11 @@ public class OpenAiHttpInterceptor implements Interceptor {
         // 2.构建请求
         Request request = original.newBuilder()
                 .url(original.url())
-                .header("Authorization","Bearer " + BearerTokenUtils.generateToken(configuration.getApiKey(), configuration.getApiSecret()))
-                .header("Content-Type",Configuration.JSON_CONTENT_TYPE)
-                .header("User-Agent",Configuration.DEFAULT_USER_AGENT)
-                .header("Accept",Configuration.SSE_CONTENT_TYPE)
-                .method(original.method(),original.body())
+                .header("Authorization", "Bearer " + BearerTokenUtils.generateToken(configuration.getApiKey(), configuration.getApiSecret()))
+                .header("Content-Type", Configuration.JSON_CONTENT_TYPE)
+                .header("User-Agent", Configuration.DEFAULT_USER_AGENT)
+                .header("Accept", Configuration.SSE_CONTENT_TYPE)
+                .method(original.method(), original.body())
                 .build();
 
         //3.返回执行结果
