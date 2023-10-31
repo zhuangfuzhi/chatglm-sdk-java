@@ -15,7 +15,6 @@ import retrofit2.http.Path;
 public interface IOpenAiApi {
 
     String v3_completions = "api/paas/v3/model-api/{model}/sse-invoke";
-
     @POST(v3_completions)
     Single<ChatCompletionResponse> completions(@Path("model") String model, @Body ChatCompletionRequest chatCompletionRequest);
 
