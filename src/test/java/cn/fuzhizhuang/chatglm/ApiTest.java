@@ -32,7 +32,7 @@ public class ApiTest {
         // 1. 配置文件
         Configuration configuration = new Configuration();
         configuration.setApiHost("https://open.bigmodel.cn/");
-        configuration.setApiSecretKey("3bde415cdcfca80fbe7069f9504341b1.DtiuyMdKr3u0hr10");
+        configuration.setApiSecretKey("your zhipuAi API key");
         // 2. 会话工厂
         OpenAiSessionFactory factory = new DefaultOpenAiSessionFactory(configuration);
         // 3. 开启会话
@@ -53,7 +53,7 @@ public class ApiTest {
             {
                 add(ChatCompletionRequest.Prompt.builder()
                         .role(Role.user.getCode())
-                        .content("讲个笑话")
+                        .content("写一个Java冒泡排序")
                         .build());
             }
         });
@@ -87,7 +87,7 @@ public class ApiTest {
         // 1. 配置文件
         Configuration configuration = new Configuration();
         configuration.setApiHost("https://open.bigmodel.cn/");
-        configuration.setApiSecretKey("3bde415cdcfca80fbe7069f9504341b1.DtiuyMdKr3u0hr10");
+        configuration.setApiSecretKey("your zhipuAi API key");
 
         // 2. 获取Token
         String token = BearerTokenUtils.generateToken(configuration.getApiKey(), configuration.getApiSecret());
