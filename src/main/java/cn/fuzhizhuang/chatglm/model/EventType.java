@@ -11,10 +11,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum EventType {
 
-    add("add", "增量"),
-    finish("finish", "结束"),
-    error("error", "错误"),
-    interrupted("interrupted", "中断"),
+    add("add","增量"),
+    finish("finish","结束"),
+    error("error","错误"),
+    interrupted("interrupted","中断"),
 
     ;
 
