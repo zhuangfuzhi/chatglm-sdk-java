@@ -21,7 +21,6 @@ public enum Role {
      * assistant ： 模型生成的内容
      */
     assistant("assistant"),
-
     ;
 
     /**
