@@ -12,4 +12,5 @@ public interface OpenAiSessionFactory {
      * @return Open AI 会话
      */
     OpenAiSession openSession();
+
 }

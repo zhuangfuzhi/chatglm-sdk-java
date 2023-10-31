@@ -49,5 +49,6 @@ public class DefaultOpenAiSessionFactory implements OpenAiSessionFactory {
                 .build().create(IOpenAiApi.class);
         configuration.setOpenAiApi(openAiApi);
         return new DefaultOpenAiSession(configuration);
+
     }
 }
