@@ -20,7 +20,7 @@ public class ChatCompletionResponse {
     private String meta;
 
     @Data
-    public static class Meta{
+    public static class Meta {
         /**
          * 处理状态，PROCESSING（处理中），SUCCESS（成功），FAIL（失败）
          * 注：处理中状态需通过查询获取结果
