@@ -43,10 +43,10 @@ public class DefaultOpenAiSession implements OpenAiSession {
     public EventSource completions(ChatCompletionRequest chatCompletionRequest, EventSourceListener eventSourceListener) throws JsonProcessingException {
         //构建请求信息
         Request request = new Request.Builder()
-                .url(configuration.getApiHost().concat(IOpenAiApi.v3_completions).replace("{model}",chatCompletionRequest.getModel().getModel()))
-                .post(RequestBody.create(MediaType.parse("application/json"),chatCompletionRequest.toString()))
+                .url(configuration.getApiHost().concat(IOpenAiApi.v3_completions).replace("{model}", chatCompletionRequest.getModel().getModel()))
+                .post(RequestBody.create(MediaType.parse("application/json"), chatCompletionRequest.toString()))
                 .build();
         //返回事件结果
-        return factory.newEventSource(request,eventSourceListener);
+        return factory.newEventSource(request, eventSourceListener);
     }
 }

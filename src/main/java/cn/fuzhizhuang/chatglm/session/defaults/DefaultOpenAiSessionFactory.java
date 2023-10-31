@@ -32,7 +32,7 @@ public class DefaultOpenAiSessionFactory implements OpenAiSessionFactory {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(configuration.getLevel());
         //2.开启Http客户端
-        OkHttpClient okHttpClient =  new OkHttpClient.Builder()
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
                 .addInterceptor(new OpenAiHttpInterceptor(configuration))
                 .connectTimeout(configuration.getConnectTimeout(), TimeUnit.SECONDS)
