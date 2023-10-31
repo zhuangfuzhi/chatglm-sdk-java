@@ -48,5 +48,6 @@ public class DefaultOpenAiSession implements OpenAiSession {
                 .build();
         //返回事件结果
         return factory.newEventSource(request, eventSourceListener);
+
     }
 }

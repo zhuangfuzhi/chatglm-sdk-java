@@ -20,4 +20,5 @@ public interface OpenAiSession {
      * @throws JsonProcessingException JSON 处理异常
      */
     EventSource completions(ChatCompletionRequest chatCompletionRequest, EventSourceListener eventSourceListener) throws JsonProcessingException;
+
 }
